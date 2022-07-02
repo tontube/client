@@ -27,11 +27,11 @@ After receiving each payment in the channel, the server sends the key to decrypt
 
 **publicKey**
 - Client only sends
-- Server replies on the same event with the server's public key
+- Server replies on the same event with the server's public key and wallet address
 
 **latestState**
 - Client sends it along with its publicKey
-- Server replies with the latest state object or empty: channel_id, client_public_key, client_balance, server_balance, client_sequence_number, client_signature
+- Server replies with the latest state object or empty: channel_id, client_wallet_address, client_public_key, client_balance, server_balance, client_sequence_number, client_signature
 
 **newChannel**
 - Client sends it to server with the latest state (which is actually the first state)
