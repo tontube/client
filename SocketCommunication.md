@@ -3,7 +3,7 @@
 ## Overview
 The server only keeps the latest communication channel info between it and each client. The client can query the latest channel from the server and continue on from there. Upon transferring all the balance in the channel, the client sends a finalized transmission and starts a new channel when the user buys more hours.
 
-After receiving each payment in the channel, the server sends the key to decrypt the next n seconds of the stream.
+After receiving each payment in the channel, the server sends the secret for downloading the next n seconds of the stream.
 
 ## The algorithm
 
@@ -46,6 +46,6 @@ After receiving each payment in the channel, the server sends the key to decrypt
 - Client replies with a signature of the updated state which is the next payment
 - If server does not receive the response to pay, it will enter idle state with that client. The client will have to send **play** again
 
-**decrypt**
-- Server sends it to client along with the decryption key of the next n seconds of stream starting from second x
-- Client does not reply but uses the key to decrypt and show the stream
+**secret**
+- Server sends it to client along with the secret to download the next n seconds of the stream
+- Client does not reply but uses the secret to continue with the stream
